@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+//import MBProgressHUD
 
 class userViewController: UIViewController, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -24,8 +26,30 @@ class userViewController: UIViewController, UITableViewDelegate, UINavigationCon
     
     
     @IBAction func onSave(sender: AnyObject) {
+        let newImage = Post.resize(image, newSize: CGSize(width: 300, height: 500))
+        Post.postUserImage(newImage, withCaption: CaptionTextField.text) { (success: Bool, error: NSError?) -> Void in
+            
+            if success {
+                print("good")
+                self.image_view.image = nil
+                self.CaptionTextField.text = nil
+                
+            } else {
+                print("Sorry! Error")
+            }
+            
+            self.tabBarController?.selectedIndex = 0
+            
+        }
+        self.tabBarController?.selectedIndex = 0
+        
     }
     
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
     
 
     override func viewDidLoad() {
@@ -59,22 +83,43 @@ class userViewController: UIViewController, UITableViewDelegate, UINavigationCon
         
         presentViewController(capture_2, animated: true, completion: nil)
     }
-    //Folder Access funcion
+    // onclick Folder Access funcion
     
     @IBAction func Folders(sender: AnyObject) {
         
         let capture = UIImagePickerController()
         capture.delegate = self
         capture.sourceType = .PhotoLibrary
+        // call saveimages function
+        saveImages(image)
         presentViewController(capture, animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        image_view.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+    func saveImages(image:UIImage?){
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
-        dismissViewControllerAnimated(true , completion: nil)
     }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let firstPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
+        _ = info[UIImagePickerControllerOriginalImage] as! UIImage
+        image = firstPhoto
+        //image_view.image = info[UdIImagePickerControllerOriginalImage] as? UIImage
+        saveImages(image)
+        dismissViewControllerAnimated(true, completion: nil)
+        self.image_view.image = image
+    }
+    
+    func imagePickerController_2(picker_2: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
+        let firstPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
+        _ = info[UIImagePickerControllerOriginalImage] as! UIImage
+        image = firstPhoto
+        //image_view.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        saveImages(image)
+        dismissViewControllerAnimated(true, completion: nil)
+        self.image_view.image = image
+    }
     
         
     

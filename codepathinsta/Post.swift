@@ -33,6 +33,31 @@ class Post: NSObject {
         post.saveInBackgroundWithBlock(completion)
     }
     
+    
+    class func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    class func postUserProfile(image: UIImage?, withCompletion completion: PFBooleanResultBlock?) {
+        let post = PFObject(className: "Profile")
+        
+        post["UserName"] = PFUser.currentUser()?.username!
+        resize(image!, newSize: CGSize(width: 100, height: 100))
+        post["profilePicture"] = getPFFileFromImage(image)
+        
+        post.saveInBackgroundWithBlock(completion)
+    }
+    
+
+    
     /**
      Method to convert UIImage to PFFile
      

@@ -7,6 +7,7 @@ use_frameworks!
 target 'codepathinsta' do
       pod 'Parse'
       pod 'ParseUI'
+       pod 'MBProgressHUD'
 end
 
 #target 'codepathinstaTests' do
