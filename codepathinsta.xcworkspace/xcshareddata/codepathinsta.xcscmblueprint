@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CF530ABC7F59F0AB90C24AD738F14620915E26F6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "CF530ABC7F59F0AB90C24AD738F14620915E26F6" : 0,
+    "54B6068A5BB745BB3A550A9F6137F723211DC64D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "09DE5434-1F1E-4FB0-AF5F-CBBF4BBEF9A1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "CF530ABC7F59F0AB90C24AD738F14620915E26F6" : "InstaParse\/",
+    "54B6068A5BB745BB3A550A9F6137F723211DC64D" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "codepathinsta",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "codepathinsta.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tpham44\/Twitter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "54B6068A5BB745BB3A550A9F6137F723211DC64D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tpham44\/InstaParse.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CF530ABC7F59F0AB90C24AD738F14620915E26F6"
+    }
+  ]
+}

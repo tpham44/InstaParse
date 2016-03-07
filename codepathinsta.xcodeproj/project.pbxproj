@@ -17,6 +17,7 @@
 		81D876211C8686B50048B647 /* codepathinstaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D876201C8686B50048B647 /* codepathinstaUITests.swift */; };
 		81D8762F1C868BBA0048B647 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8762E1C868BBA0048B647 /* LoginViewController.swift */; };
 		81E4E4711C8D119A009E3170 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E4E4701C8D119A009E3170 /* Post.swift */; };
+		81E4E4751C8E083B009E3170 /* userViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E4E4741C8E083B009E3170 /* userViewController.swift */; };
 		C62B456046A45576F82DF7B8 /* Pods_codepathinsta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989E3D269FED380A295AABCE /* Pods_codepathinsta.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		81D876221C8686B50048B647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81D8762E1C868BBA0048B647 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81E4E4701C8D119A009E3170 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		81E4E4741C8E083B009E3170 /* userViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userViewController.swift; sourceTree = "<group>"; };
 		989E3D269FED380A295AABCE /* Pods_codepathinsta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_codepathinsta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA737C7FE45EC0498EF188D1 /* Pods-codepathinsta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codepathinsta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-codepathinsta/Pods-codepathinsta.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				81B0FC301C8CBCF200941410 /* FirstViewController.swift */,
+				81E4E4741C8E083B009E3170 /* userViewController.swift */,
 			);
 			name = "all ViewControllers";
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				81B0FC311C8CBCF200941410 /* FirstViewController.swift in Sources */,
 				81D8762F1C868BBA0048B647 /* LoginViewController.swift in Sources */,
 				81B0FC341C8D07F500941410 /* FirstTableViewCell.swift in Sources */,
+				81E4E4751C8E083B009E3170 /* userViewController.swift in Sources */,
 				81D876011C8686B40048B647 /* AppDelegate.swift in Sources */,
 				81E4E4711C8D119A009E3170 /* Post.swift in Sources */,
 			);
