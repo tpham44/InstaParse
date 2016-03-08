@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8186B6181C8EA868004291B9 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8186B6171C8EA868004291B9 /* Photo.swift */; };
 		81B0FC311C8CBCF200941410 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0FC301C8CBCF200941410 /* FirstViewController.swift */; };
 		81B0FC341C8D07F500941410 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0FC331C8D07F500941410 /* FirstTableViewCell.swift */; };
 		81D876011C8686B40048B647 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D876001C8686B40048B647 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		6B9A75130EF8E1048A052929 /* Pods-codepathinsta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codepathinsta.release.xcconfig"; path = "Pods/Target Support Files/Pods-codepathinsta/Pods-codepathinsta.release.xcconfig"; sourceTree = "<group>"; };
+		8186B6171C8EA868004291B9 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		81B0FC301C8CBCF200941410 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		81B0FC331C8D07F500941410 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		81D875FD1C8686B40048B647 /* codepathinsta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codepathinsta.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				81E4E4701C8D119A009E3170 /* Post.swift */,
+				8186B6171C8EA868004291B9 /* Photo.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8186B6181C8EA868004291B9 /* Photo.swift in Sources */,
 				81B0FC311C8CBCF200941410 /* FirstViewController.swift in Sources */,
 				81D8762F1C868BBA0048B647 /* LoginViewController.swift in Sources */,
 				81B0FC341C8D07F500941410 /* FirstTableViewCell.swift in Sources */,

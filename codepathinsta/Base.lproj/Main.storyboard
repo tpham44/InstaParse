@@ -153,7 +153,7 @@
                                         <color key="backgroundColor" red="0.081825524260000004" green="1" blue="0.21168980330000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gm-kf-1xx">
-                                        <rect key="frame" x="45" y="134" width="37" height="32"/>
+                                        <rect key="frame" x="68" y="134" width="37" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="37" id="MH1-yF-AZe"/>
                                             <constraint firstAttribute="height" constant="32" id="VKX-D6-qRn"/>
@@ -162,14 +162,6 @@
                                         <connections>
                                             <action selector="Camera:" destination="s19-85-edp" eventType="touchUpInside" id="B3r-q5-uRZ"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqZ-zl-kfs">
-                                        <rect key="frame" x="286" y="134" width="35" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="Dr7-9D-pKH"/>
-                                            <constraint firstAttribute="width" constant="35" id="P1V-az-9eu"/>
-                                        </constraints>
-                                        <state key="normal" title="Acess Folder Button" image="iconmonstr-picture"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Selection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvv-DV-4eg">
                                         <rect key="frame" x="122" y="63" width="131" height="32"/>
@@ -181,18 +173,29 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqZ-zl-kfs">
+                                        <rect key="frame" x="264" y="134" width="35" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="Dr7-9D-pKH"/>
+                                            <constraint firstAttribute="width" constant="35" id="P1V-az-9eu"/>
+                                        </constraints>
+                                        <state key="normal" title="Acess Folder Button" image="iconmonstr-picture"/>
+                                        <connections>
+                                            <action selector="Folders:" destination="s19-85-edp" eventType="touchUpInside" id="s7M-UI-Tfu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Vvv-DV-4eg" firstAttribute="top" secondItem="DoT-Hm-kSP" secondAttribute="top" constant="63" id="6AH-t2-dft"/>
-                                    <constraint firstAttribute="trailing" secondItem="xqZ-zl-kfs" secondAttribute="trailing" constant="54" id="JPl-7m-yOY"/>
+                                    <constraint firstAttribute="trailing" secondItem="xqZ-zl-kfs" secondAttribute="trailing" constant="76" id="JPl-7m-yOY"/>
                                     <constraint firstItem="Vvv-DV-4eg" firstAttribute="leading" secondItem="DoT-Hm-kSP" secondAttribute="leading" constant="122" id="Uv5-SY-c2X"/>
                                     <constraint firstItem="0gm-kf-1xx" firstAttribute="top" secondItem="DoT-Hm-kSP" secondAttribute="top" constant="134" id="Ydq-EO-FB9"/>
                                     <constraint firstAttribute="trailing" secondItem="Vvv-DV-4eg" secondAttribute="trailing" constant="122" id="aUs-Zt-L8E"/>
                                     <constraint firstItem="xqZ-zl-kfs" firstAttribute="top" secondItem="DoT-Hm-kSP" secondAttribute="top" constant="134" id="q9B-E1-ZKU"/>
                                     <constraint firstAttribute="bottom" secondItem="xqZ-zl-kfs" secondAttribute="bottom" constant="134" id="qr0-SL-fS3"/>
-                                    <constraint firstItem="0gm-kf-1xx" firstAttribute="leading" secondItem="DoT-Hm-kSP" secondAttribute="leading" constant="45" id="uWt-zz-9LJ"/>
-                                    <constraint firstItem="xqZ-zl-kfs" firstAttribute="leading" secondItem="0gm-kf-1xx" secondAttribute="trailing" constant="204" id="vhD-dH-gj6"/>
+                                    <constraint firstItem="0gm-kf-1xx" firstAttribute="leading" secondItem="DoT-Hm-kSP" secondAttribute="leading" constant="68" id="uWt-zz-9LJ"/>
+                                    <constraint firstItem="xqZ-zl-kfs" firstAttribute="leading" secondItem="0gm-kf-1xx" secondAttribute="trailing" constant="159" id="vhD-dH-gj6"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uii-2D-1c7">
@@ -234,6 +237,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBd-EJ-alo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="A3H-qH-fTv">
+                    <connections>
+                        <action selector="OnTap:" destination="s19-85-edp" id="dNC-rw-C8e"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="719.5" y="1029.5"/>
         </scene>

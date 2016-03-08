@@ -18,7 +18,7 @@ class userViewController: UIViewController, UITableViewDelegate, UINavigationCon
     var currentViewController: UIViewController?
     // set UIImagePickerController to imageCapture
     let imageCapture = UIImagePickerController()
-    
+    //display caption
     @IBOutlet weak var CaptionTextField: UITextField!
     
  
@@ -30,12 +30,12 @@ class userViewController: UIViewController, UITableViewDelegate, UINavigationCon
         Post.postUserImage(newImage, withCaption: CaptionTextField.text) { (success: Bool, error: NSError?) -> Void in
             
             if success {
-                print("good")
+                print("Captions saved !!!")
                 self.image_view.image = nil
                 self.CaptionTextField.text = nil
                 
             } else {
-                print("Sorry! Error")
+                print("Error: Can not save.. ")
             }
             
             self.tabBarController?.selectedIndex = 0
@@ -47,7 +47,14 @@ class userViewController: UIViewController, UITableViewDelegate, UINavigationCon
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
+    
+    @IBAction func OnTap(sender: AnyObject) {
+        
+        view.endEditing(true)
+    }
+
     
 
     
@@ -77,22 +84,22 @@ class userViewController: UIViewController, UITableViewDelegate, UINavigationCon
     
     @IBAction func Camera(sender: AnyObject) {
         
-        let capture_2 = UIImagePickerController()
-        capture_2.delegate = self
-        capture_2.sourceType = .Camera
+        let picker_2 = UIImagePickerController()
+        picker_2.delegate = self
+        picker_2.sourceType = .Camera
         
-        presentViewController(capture_2, animated: true, completion: nil)
+        presentViewController(picker_2, animated: true, completion: nil)
     }
     // onclick Folder Access funcion
     
     @IBAction func Folders(sender: AnyObject) {
         
-        let capture = UIImagePickerController()
-        capture.delegate = self
-        capture.sourceType = .PhotoLibrary
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .PhotoLibrary
         // call saveimages function
         saveImages(image)
-        presentViewController(capture, animated: true, completion: nil)
+        presentViewController(picker, animated: true, completion: nil)
     }
     
     func saveImages(image:UIImage?){
@@ -109,7 +116,7 @@ class userViewController: UIViewController, UITableViewDelegate, UINavigationCon
         dismissViewControllerAnimated(true, completion: nil)
         self.image_view.image = image
     }
-    
+    // Fu
     func imagePickerController_2(picker_2: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         let firstPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
