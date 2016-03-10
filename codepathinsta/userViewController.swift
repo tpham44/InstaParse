@@ -25,8 +25,24 @@ class userViewController: UIViewController, UITableViewDelegate, UINavigationCon
     @IBOutlet weak var image_view: UIImageView!
     
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //imageCapture.delegate = self
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     @IBAction func onSave(sender: AnyObject) {
+        
         let newImage = Post.resize(image, newSize: CGSize(width: 300, height: 500))
+        
         Post.postUserImage(newImage, withCaption: CaptionTextField.text) { (success: Bool, error: NSError?) -> Void in
             
             if success {
@@ -59,17 +75,8 @@ class userViewController: UIViewController, UITableViewDelegate, UINavigationCon
 
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        imageCapture.delegate = self
-        // Do any additional setup after loading the view.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+ 
     
     func tabBar( tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         let capture = UIImagePickerController()
@@ -96,10 +103,12 @@ class userViewController: UIViewController, UITableViewDelegate, UINavigationCon
         
         let picker = UIImagePickerController()
         picker.delegate = self
-        picker.sourceType = .PhotoLibrary
+        picker.allowsEditing = true
+        //picker.sourceType = .PhotoLibrary  ORIGINAL
+        picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         // call saveimages function
         saveImages(image)
-        presentViewController(picker, animated: true, completion: nil)
+        self.presentViewController(picker, animated: true, completion: nil)
     }
     
     func saveImages(image:UIImage?){

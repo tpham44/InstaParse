@@ -30,6 +30,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         parseAPICall()
+        tableView.reloadData()
         
         
         // Do any additional setup after loading the view.
@@ -39,10 +40,15 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        parseAPICall()
+    override func viewDidAppear(animated: Bool) {
+         parseAPICall()
+        print("did appear")
+        
     }
+    
+//    override func viewWillAppear(animated: Bool) {
+//        parseAPICall()
+//    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
@@ -57,13 +63,21 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let photo = photos[indexPath.row]
         
-        var instagramPost: PFObject! {
-            didSet {
-                print("image was set")
-                cell.photoFromParse.file = photo["media"] as? PFFile
-                cell.photoFromParse.loadInBackground()
-            }
-        }
+//        var instagramPost: PFObject! {
+//            didSet {
+//                print("image was set")
+//                cell.photoFromParse.file = photo["media"] as? PFFile
+//                cell.photoFromParse.loadInBackground()
+//            }
+//        }
+//        This is the problem 
+        
+        //setting image
+        cell.photoFromParse.file = photo["media"] as? PFFile
+        cell.photoFromParse.loadInBackground()
+
+        
+        // setting caption
         let caption = photo ["caption"] as! String
         cell.captionUILabel.text = caption
            
@@ -86,10 +100,12 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
                 print("data fetched")
                 self.photos = posts
                 self.tableView.reloadData()
+                
             } else {
                 // handle error
                 print ("Error")
             }
+            //self.tableView.reloadData()
         }
  }
 
@@ -97,11 +113,16 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBAction func onLogout(sender: AnyObject) {
         
         PFUser.logOut()
-    
+     
+        //in order to access the logout function inside AppDelegate you must first
+        //access the current instance of it
+       
+        
         print("User has logged off ")
         self.dismissViewControllerAnimated(true, completion: nil)
         view.endEditing(true)
         NSNotificationCenter.defaultCenter().postNotificationName (UserLogoutNotification, object: nil)
+        
         //when log out, we must use the live above to notify that user has been logout successfully
 
     }

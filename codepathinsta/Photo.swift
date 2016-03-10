@@ -16,7 +16,7 @@ class Photo: NSObject {
     
     
     var image: UIImage?
-    //var author: PFUser?
+    var author: PFUser?
     var caption: String?
     //var likesCount: Int?
     var commentsCount: Int?

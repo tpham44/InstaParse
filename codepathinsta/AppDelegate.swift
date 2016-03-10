@@ -57,6 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func onlogOut () {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier ("LoginViewController")
         window?.rootViewController = viewController
+        
+        
     }
 
 

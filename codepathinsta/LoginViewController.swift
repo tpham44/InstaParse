@@ -62,9 +62,13 @@ class LoginViewController: UIViewController {
         newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if let error = error {
                 print(error.localizedDescription)
+                
             } else {
                 print("User Registered successfully")
                 // manually segue to logged in view
+                self.performSegueWithIdentifier("signInsegue", sender: self)
+                
+                print ("New user successfully login")
             }
         }
     
